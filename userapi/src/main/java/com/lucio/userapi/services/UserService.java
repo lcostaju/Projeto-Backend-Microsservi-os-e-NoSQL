@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-import org.springframework.data.domain.Page;
+
 import org.springframework.stereotype.Service;
 
 import com.lucio.userapi.models.User;
@@ -13,6 +13,7 @@ import com.lucio.userapi.models.dto.UserDTO;
 import com.lucio.userapi.repositories.UserRepository;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
 
 import lombok.RequiredArgsConstructor;
 
