@@ -1,4 +1,4 @@
-package com.lucio.mongodb.relacionamentos.models;
+package com.lucio.mongodb.relacionamentos.relacionamentos.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document(collation = "perfis")
+@Document(collection = "perfis")
 public class Perfil {
     @Id
     private String id;

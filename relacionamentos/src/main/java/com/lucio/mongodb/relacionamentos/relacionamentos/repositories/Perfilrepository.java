@@ -1,8 +1,8 @@
-package com.lucio.mongodb.relacionamentos.repositories;
+package com.lucio.mongodb.relacionamentos.relacionamentos.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.lucio.mongodb.relacionamentos.models.Perfil;
+import com.lucio.mongodb.relacionamentos.relacionamentos.models.Perfil;
 
 public interface Perfilrepository extends MongoRepository<Perfil, String>{
 

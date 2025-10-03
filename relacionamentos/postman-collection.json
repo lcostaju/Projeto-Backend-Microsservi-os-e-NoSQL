@@ -1,0 +1,203 @@
+{
+  "info": {
+    "name": "UsuarioController - Relacionamentos",
+    "description": "Coleção para testar os endpoints do UsuarioController",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar Todos os Usuários",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Busca todos os usuários cadastrados no sistema"
+      }
+    },
+    {
+      "name": "Criar Usuário Simples (sem perfil)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"João Silva\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Cria um usuário sem perfil associado"
+      }
+    },
+    {
+      "name": "Criar Usuário com Perfil Novo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Maria Santos\",\n  \"perfil\": {\n    \"bio\": \"Desenvolvedora Full Stack apaixonada por tecnologia\",\n    \"avatarUrl\": \"https://example.com/avatar/maria.jpg\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Cria um usuário com um novo perfil (perfil será salvo automaticamente)"
+      }
+    },
+    {
+      "name": "Criar Usuário com Perfil Existente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Pedro Costa\",\n  \"perfil\": {\n    \"id\": \"ID_DO_PERFIL_EXISTENTE\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Cria um usuário referenciando um perfil já existente"
+      }
+    },
+    {
+      "name": "Criar Usuário - Ana Clara",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Ana Clara\",\n  \"perfil\": {\n    \"bio\": \"Designer UX/UI com 5 anos de experiência\",\n    \"avatarUrl\": \"https://example.com/avatar/ana.jpg\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Exemplo de criação de usuário com perfil"
+      }
+    },
+    {
+      "name": "Criar Usuário - Carlos Eduardo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Carlos Eduardo\",\n  \"perfil\": {\n    \"bio\": \"Engenheiro de Software especializado em microserviços\",\n    \"avatarUrl\": \"https://example.com/avatar/carlos.jpg\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Exemplo de criação de usuário com perfil"
+      }
+    },
+    {
+      "name": "Criar Usuário - Fernanda Lima",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Fernanda Lima\",\n  \"perfil\": {\n    \"bio\": \"Product Manager focada em produtos digitais\",\n    \"avatarUrl\": \"https://example.com/avatar/fernanda.jpg\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuarios"
+          ]
+        },
+        "description": "Exemplo de criação de usuário com perfil"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
