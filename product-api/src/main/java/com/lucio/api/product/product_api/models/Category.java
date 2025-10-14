@@ -1,5 +1,7 @@
 package com.lucio.api.product.product_api.models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -7,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -18,4 +21,7 @@ public class Category {
     private String id;
     @Field("nome")
     private String nome;
+
+    @DBRef
+    private List<Product> products;
 }
