@@ -5,11 +5,12 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.lucio.api.product.product_api.models.dto.CategoryDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -22,6 +23,11 @@ public class Category {
     @Field("nome")
     private String nome;
 
-    @DBRef
-    private List<Product> products;
+    public static Category convert(CategoryDTO categoryDTO){
+        Category category = new Category();
+        category.setId(categoryDTO.getId());
+        category.setNome(categoryDTO.getNome());
+
+        return category;
+    }
 }

@@ -1,9 +1,8 @@
 package com.lucio.api.product.product_api.models.dto;
 
-import com.lucio.api.product.product_api.models.Category;
 import com.lucio.api.product.product_api.models.Product;
-
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,20 +13,20 @@ import lombok.NoArgsConstructor;
 public class ProductDTO {
     private String id;
 
-    @NotBlank(message = "Pruduct identifier é obrigatorio")
+    // productIdentifier não é mais obrigatório para permitir PUT sem esse campo
     private String productIdentifier;
 
-    @NotBlank(message = "nome é obrigatorio")
+    @NotBlank(message = "nome é obrigatório")
     private String nome;
 
-    @NotBlank(message = "preco é obrigatorio")
+    @NotNull(message = "preco é obrigatório")
     private Double preco;
 
-    @NotBlank(message = "descricao é obrigatorio")
+    @NotBlank(message = "descricao é obrigatória")
     private String descricao;
 
-    @NotBlank(message = "category é obrigatorio")
-    private Category category;
+    @NotNull(message = "category é obrigatório")
+    private CategoryDTO category;
 
     public static ProductDTO convert(Product product){
         ProductDTO productDTO = new ProductDTO();
@@ -36,9 +35,9 @@ public class ProductDTO {
         productDTO.setNome(product.getNome());
         productDTO.setPreco(product.getPreco());
         productDTO.setDescricao(product.getDescricao());
-        product.setCategory(product.getCategory());
-
+        if (product.getCategory() != null) {
+            productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
+        }
         return productDTO;
-
     }
 }

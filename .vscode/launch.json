@@ -9,6 +9,36 @@
             "projectName": "start-example",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserApiApplication<user_api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.user_api.UserApiApplication",
+            "projectName": "user_api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserapiApplication<userapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.lucio.userapi.UserapiApplication",
+            "projectName": "userapi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProductApiApplication<product-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.lucio.api.product.product_api.ProductApiApplication",
+            "projectName": "product-api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
