@@ -39,6 +39,16 @@
             "projectName": "product-api",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ShoppingApiApplication<shopping-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.lucio.api.shopping.shopping_api.ShoppingApiApplication",
+            "projectName": "shopping-api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
