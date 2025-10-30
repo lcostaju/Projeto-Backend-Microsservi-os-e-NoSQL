@@ -1,0 +1,6 @@
+com\lucio\dto\CategoryDTO.class
+com\lucio\dto\UserDTO.class
+com\lucio\dto\ProductDTO.class
+com\lucio\dto\ShopDTO.class
+com\lucio\dto\ItemDTO.class
+com\lucio\Main.class
