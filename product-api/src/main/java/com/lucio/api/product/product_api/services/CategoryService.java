@@ -31,7 +31,8 @@ public class CategoryService {
 
     public CategoryDTO save(CategoryDTO categoryDTO){
         Category category = Category.fromDTO(categoryDTO);
-        return DTOConverter.convert(category);
+        Category saved = categoryRepository.save(category);
+        return DTOConverter.convert(saved);
     }
 
     public CategoryDTO delete(String categoryId) {
