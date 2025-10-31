@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 
-import com.lucio.api.product.product_api.models.dto.CategoryDTO;
+// import com.lucio.api.product.product_api.models.dto.CategoryDTO;
 import com.lucio.api.product.product_api.services.CategoryService;
+import com.lucio.dto.CategoryDTO;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

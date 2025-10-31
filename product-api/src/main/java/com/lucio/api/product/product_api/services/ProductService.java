@@ -8,10 +8,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.lucio.api.product.product_api.models.Product;
+import com.lucio.api.product.product_api.converter.DTOConverter;
 import com.lucio.api.product.product_api.models.Category;
-import com.lucio.api.product.product_api.models.dto.ProductDTO;
-import com.lucio.api.product.product_api.models.dto.CategoryDTO;
 import com.lucio.api.product.product_api.repositories.ProductRepository;
+import com.lucio.dto.ProductDTO;
 import com.lucio.api.product.product_api.repositories.CategoryRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -36,30 +36,30 @@ public class ProductService {
         product.setDescricao(productDTO.getDescricao());
         product.setCategory(category);
         Product saved = productRepository.save(product);
-        return ProductDTO.convert(saved);
+        return DTOConverter.convert(saved);
     }
 
     public List<ProductDTO> getAll() {
         return productRepository.findAll().stream()
-            .map(ProductDTO::convert)
+            .map(DTOConverter::convert)
             .collect(Collectors.toList());
     }
 
     public ProductDTO findById(String id) {
         Product product = productRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Product not found"));
-        return ProductDTO.convert(product);
+        return DTOConverter.convert(product);
     }
 
     public ProductDTO findByProductIdentifier(String productIdentifier) {
         Product product = productRepository.findByProductIdentifier(productIdentifier);
         if (product == null) throw new RuntimeException("Product not found");
-        return ProductDTO.convert(product);
+        return DTOConverter.convert(product);
     }
 
     public List<ProductDTO> findByCategory(String categoryId) {
         return productRepository.findByCategory_Id(categoryId).stream()
-            .map(ProductDTO::convert)
+            .map(DTOConverter::convert)
             .collect(Collectors.toList());
     }
 
@@ -86,7 +86,7 @@ public class ProductService {
             product.setCategory(category);
         }
         product = productRepository.save(product);
-        return ProductDTO.convert(product);
+        return DTOConverter.convert(product);
     }
 
     public void delete(String id) {
@@ -96,6 +96,6 @@ public class ProductService {
     }
 
     public Page<ProductDTO> getAllPage(Pageable pageable) {
-        return productRepository.findAll(pageable).map(ProductDTO::convert);
+        return productRepository.findAll(pageable).map(DTOConverter::convert);
     }
 }

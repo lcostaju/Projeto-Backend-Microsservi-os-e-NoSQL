@@ -1,8 +1,9 @@
 package com.lucio.api.shopping.shopping_api.controllers;
 
 import com.lucio.api.shopping.shopping_api.models.Shop;
-import com.lucio.api.shopping.shopping_api.models.dto.ShopDTO;
 import com.lucio.api.shopping.shopping_api.services.ShopService;
+import com.lucio.dto.ShopDTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;

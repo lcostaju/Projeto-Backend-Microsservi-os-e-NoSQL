@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lucio.userapi.models.dto.UserDTO;
+import com.lucio.dto.UserDTO;
+// import com.lucio.userapi.models.dto.UserDTO;
 import com.lucio.userapi.services.UserService;
 
 import jakarta.validation.Valid;

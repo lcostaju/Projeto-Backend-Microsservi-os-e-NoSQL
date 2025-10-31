@@ -6,10 +6,15 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Document(collection = "shop")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Shop {
     @Id
     private String id;

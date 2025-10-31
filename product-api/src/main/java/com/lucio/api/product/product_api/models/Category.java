@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.lucio.api.product.product_api.models.dto.CategoryDTO;
+import com.lucio.dto.CategoryDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,11 +23,17 @@ public class Category {
     @Field("nome")
     private String nome;
 
-    public static Category convert(CategoryDTO categoryDTO){
-        Category category = new Category();
-        category.setId(categoryDTO.getId());
-        category.setNome(categoryDTO.getNome());
+    // public static Category convert(CategoryDTO categoryDTO){
+    //     Category category = new Category();
+    //     category.setId(categoryDTO.getId());
+    //     category.setNome(categoryDTO.getNome());
 
+    //     return category;
+    // }
+
+    public static Category fromDTO(CategoryDTO categoryDTO){
+        Category category = new Category();
+        category.setNome(categoryDTO.getNome());
         return category;
     }
 }

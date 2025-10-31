@@ -7,9 +7,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.lucio.api.product.product_api.converter.DTOConverter;
 import com.lucio.api.product.product_api.models.Category;
-import com.lucio.api.product.product_api.models.dto.CategoryDTO;
+// import com.lucio.api.product.product_api.models.dto.CategoryDTO;
 import com.lucio.api.product.product_api.repositories.CategoryRepository;
+import com.lucio.dto.CategoryDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,20 +25,20 @@ public class CategoryService {
         List<Category> categories = categoryRepository.findAll();
 
         return categories.stream()
-            .map(CategoryDTO::convert)
+            .map(DTOConverter::convert)
             .collect(Collectors.toList());
     }
 
     public CategoryDTO save(CategoryDTO categoryDTO){
-        Category category = categoryRepository.save(Category.convert(categoryDTO));
-        return CategoryDTO.convert(category);
+        Category category = Category.fromDTO(categoryDTO);
+        return DTOConverter.convert(category);
     }
 
     public CategoryDTO delete(String categoryId) {
         Category category = categoryRepository
             .findById(categoryId).orElseThrow(() -> new RuntimeException("Category not found"));
         categoryRepository.delete(category);
-        return CategoryDTO.convert(category);
+        return DTOConverter.convert(category);
     }
 
     public CategoryDTO editCategory(String categoryId, CategoryDTO categoryDTO) {
@@ -49,13 +51,13 @@ public class CategoryService {
         }
 
         category = categoryRepository.save(category);
-        return CategoryDTO.convert(category);
+        return DTOConverter.convert(category);
     }
 
     public Page<CategoryDTO> getAllPage(Pageable page){
     Page<Category> categories = categoryRepository.findAll(page);
     return categories
-    .map(CategoryDTO::convert);
+    .map(DTOConverter::convert);
 }
 
 

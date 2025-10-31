@@ -2,8 +2,9 @@ package com.lucio.api.shopping.shopping_api.services;
 
 import com.lucio.api.shopping.shopping_api.models.Shop;
 import com.lucio.api.shopping.shopping_api.models.Item;
-import com.lucio.api.shopping.shopping_api.models.dto.ShopDTO;
 import com.lucio.api.shopping.shopping_api.repositories.ShopRepository;
+import com.lucio.dto.ShopDTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
