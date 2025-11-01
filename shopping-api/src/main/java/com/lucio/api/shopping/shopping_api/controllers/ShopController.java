@@ -22,8 +22,8 @@ public class ShopController {
     }
 
     @PostMapping
-    public ResponseEntity<Shop> saveShop(@RequestBody ShopDTO shopDTO) {
-        Shop shop = shopService.saveShop(shopDTO);
+    public ResponseEntity<ShopDTO> saveShop(@RequestBody ShopDTO shopDTO) {
+        ShopDTO shop = shopService.saveShop(shopDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(shop);
     }
 
